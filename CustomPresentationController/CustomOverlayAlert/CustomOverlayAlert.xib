@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14865.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14819.2"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomOverlayAlertController" customModule="CustomPresentationController" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonsStackView" destination="VzC-dW-fIa" id="83Q-Mp-Ns6"/>
+                <outlet property="containerStackView" destination="ph2-ei-7aN" id="tCy-7K-Mxb"/>
+                <outlet property="labelsStackView" destination="qKq-0g-Gdj" id="8gb-U8-3hb"/>
+                <outlet property="messageLabel" destination="nrY-WV-SYr" id="8tD-Sl-36f"/>
+                <outlet property="titleLabel" destination="0IS-Nq-tcx" id="36o-xw-0jv"/>
+                <outlet property="view" destination="iN0-l3-epB" id="K8v-xy-nng"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="ph2-ei-7aN" userLabel="Container Stack View">
+                    <rect key="frame" x="32" y="76" width="350" height="53"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="qKq-0g-Gdj" userLabel="labels Stack View">
+                            <rect key="frame" x="154" y="0.0" width="42" height="53"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0IS-Nq-tcx">
+                                    <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrY-WV-SYr">
+                                    <rect key="frame" x="0.0" y="32.5" width="42" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="VzC-dW-fIa" userLabel="Buttons Stack View">
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="0.0"/>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="VzC-dW-fIa" firstAttribute="leading" secondItem="ph2-ei-7aN" secondAttribute="leading" id="lyS-3P-ydi"/>
+                        <constraint firstAttribute="trailing" secondItem="VzC-dW-fIa" secondAttribute="trailing" id="qFg-Mw-EtJ"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="rOj-HJ-fcT"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ph2-ei-7aN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="04g-h2-8rJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ph2-ei-7aN" secondAttribute="bottom" constant="32" id="NLk-7e-cRC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ph2-ei-7aN" secondAttribute="trailing" constant="32" id="hyG-5X-LIZ"/>
+                <constraint firstItem="ph2-ei-7aN" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="32" id="vv1-5f-YbD"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="149.27536231884059" y="140.95982142857142"/>
+        </view>
+    </objects>
+</document>

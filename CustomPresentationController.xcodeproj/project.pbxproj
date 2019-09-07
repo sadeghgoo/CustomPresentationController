@@ -14,6 +14,17 @@
 		AA1229CB232235DF00A19D1B /* CustomPresentationController.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA1229C9232235DF00A19D1B /* CustomPresentationController.xcdatamodeld */; };
 		AA1229CD232235E000A19D1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1229CC232235E000A19D1B /* Assets.xcassets */; };
 		AA1229D0232235E000A19D1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1229CE232235E000A19D1B /* LaunchScreen.storyboard */; };
+		AA1229D82322360700A19D1B /* BottomScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1229D72322360700A19D1B /* BottomScreenViewController.swift */; };
+		AA1229DA2322361100A19D1B /* BottomScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1229D92322361100A19D1B /* BottomScreenViewController.xib */; };
+		AA122A072322387700A19D1B /* CustomOverlayAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA122A002322387700A19D1B /* CustomOverlayAlertAction.swift */; };
+		AA122A082322387700A19D1B /* PresentedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA122A022322387700A19D1B /* PresentedVC.swift */; };
+		AA122A092322387700A19D1B /* AAPLOverlayTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA122A032322387700A19D1B /* AAPLOverlayTransitioner.swift */; };
+		AA122A0A2322387700A19D1B /* AAPLOverlayPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA122A042322387700A19D1B /* AAPLOverlayPresentationController.swift */; };
+		AA122A0B2322387700A19D1B /* CustomOverlayAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA122A052322387700A19D1B /* CustomOverlayAlertController.swift */; };
+		AA122A0C2322387700A19D1B /* CustomOverlayAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA122A062322387700A19D1B /* CustomOverlayAlert.xib */; };
+		AACB511B23227B5500369896 /* BottomScreenTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB511923227B5500369896 /* BottomScreenTransitioner.swift */; };
+		AACB511C23227B5500369896 /* BottomScreenPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB511A23227B5500369896 /* BottomScreenPresentationController.swift */; };
+		AACB511F2323866100369896 /* ContentTablview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB511E2323866100369896 /* ContentTablview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +37,17 @@
 		AA1229CC232235E000A19D1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA1229CF232235E000A19D1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA1229D1232235E000A19D1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA1229D72322360700A19D1B /* BottomScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomScreenViewController.swift; sourceTree = "<group>"; };
+		AA1229D92322361100A19D1B /* BottomScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomScreenViewController.xib; sourceTree = "<group>"; };
+		AA122A002322387700A19D1B /* CustomOverlayAlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayAlertAction.swift; sourceTree = "<group>"; };
+		AA122A022322387700A19D1B /* PresentedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedVC.swift; sourceTree = "<group>"; };
+		AA122A032322387700A19D1B /* AAPLOverlayTransitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLOverlayTransitioner.swift; sourceTree = "<group>"; };
+		AA122A042322387700A19D1B /* AAPLOverlayPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLOverlayPresentationController.swift; sourceTree = "<group>"; };
+		AA122A052322387700A19D1B /* CustomOverlayAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayAlertController.swift; sourceTree = "<group>"; };
+		AA122A062322387700A19D1B /* CustomOverlayAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayAlert.xib; sourceTree = "<group>"; };
+		AACB511923227B5500369896 /* BottomScreenTransitioner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomScreenTransitioner.swift; sourceTree = "<group>"; };
+		AACB511A23227B5500369896 /* BottomScreenPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomScreenPresentationController.swift; sourceTree = "<group>"; };
+		AACB511E2323866100369896 /* ContentTablview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTablview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +83,9 @@
 				AA1229C0232235DF00A19D1B /* AppDelegate.swift */,
 				AA1229C2232235DF00A19D1B /* SceneDelegate.swift */,
 				AA1229C4232235DF00A19D1B /* ViewController.swift */,
+				AACB511E2323866100369896 /* ContentTablview.swift */,
+				AA1229FF2322387700A19D1B /* CustomOverlayAlert */,
+				AA1229DB2322374000A19D1B /* BottomScreenViewController */,
 				AA1229C6232235DF00A19D1B /* Main.storyboard */,
 				AA1229CC232235E000A19D1B /* Assets.xcassets */,
 				AA1229CE232235E000A19D1B /* LaunchScreen.storyboard */,
@@ -68,6 +93,46 @@
 				AA1229C9232235DF00A19D1B /* CustomPresentationController.xcdatamodeld */,
 			);
 			path = CustomPresentationController;
+			sourceTree = "<group>";
+		};
+		AA1229DB2322374000A19D1B /* BottomScreenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AA1229D72322360700A19D1B /* BottomScreenViewController.swift */,
+				AACB511D23227B7B00369896 /* BottomScreenPresentationDelegate */,
+				AA1229D92322361100A19D1B /* BottomScreenViewController.xib */,
+			);
+			path = BottomScreenViewController;
+			sourceTree = "<group>";
+		};
+		AA1229FF2322387700A19D1B /* CustomOverlayAlert */ = {
+			isa = PBXGroup;
+			children = (
+				AA122A002322387700A19D1B /* CustomOverlayAlertAction.swift */,
+				AA122A012322387700A19D1B /* OverlayPresentationDelegate */,
+				AA122A052322387700A19D1B /* CustomOverlayAlertController.swift */,
+				AA122A062322387700A19D1B /* CustomOverlayAlert.xib */,
+			);
+			path = CustomOverlayAlert;
+			sourceTree = "<group>";
+		};
+		AA122A012322387700A19D1B /* OverlayPresentationDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				AA122A022322387700A19D1B /* PresentedVC.swift */,
+				AA122A032322387700A19D1B /* AAPLOverlayTransitioner.swift */,
+				AA122A042322387700A19D1B /* AAPLOverlayPresentationController.swift */,
+			);
+			path = OverlayPresentationDelegate;
+			sourceTree = "<group>";
+		};
+		AACB511D23227B7B00369896 /* BottomScreenPresentationDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				AACB511923227B5500369896 /* BottomScreenTransitioner.swift */,
+				AACB511A23227B5500369896 /* BottomScreenPresentationController.swift */,
+			);
+			path = BottomScreenPresentationDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +193,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1229DA2322361100A19D1B /* BottomScreenViewController.xib in Resources */,
+				AA122A0C2322387700A19D1B /* CustomOverlayAlert.xib in Resources */,
 				AA1229D0232235E000A19D1B /* LaunchScreen.storyboard in Resources */,
 				AA1229CD232235E000A19D1B /* Assets.xcassets in Resources */,
 				AA1229C8232235DF00A19D1B /* Main.storyboard in Resources */,
@@ -143,7 +210,16 @@
 			files = (
 				AA1229CB232235DF00A19D1B /* CustomPresentationController.xcdatamodeld in Sources */,
 				AA1229C5232235DF00A19D1B /* ViewController.swift in Sources */,
+				AACB511C23227B5500369896 /* BottomScreenPresentationController.swift in Sources */,
+				AACB511F2323866100369896 /* ContentTablview.swift in Sources */,
+				AA122A092322387700A19D1B /* AAPLOverlayTransitioner.swift in Sources */,
+				AA122A072322387700A19D1B /* CustomOverlayAlertAction.swift in Sources */,
+				AA122A082322387700A19D1B /* PresentedVC.swift in Sources */,
+				AA122A0A2322387700A19D1B /* AAPLOverlayPresentationController.swift in Sources */,
+				AA122A0B2322387700A19D1B /* CustomOverlayAlertController.swift in Sources */,
 				AA1229C1232235DF00A19D1B /* AppDelegate.swift in Sources */,
+				AACB511B23227B5500369896 /* BottomScreenTransitioner.swift in Sources */,
+				AA1229D82322360700A19D1B /* BottomScreenViewController.swift in Sources */,
 				AA1229C3232235DF00A19D1B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
