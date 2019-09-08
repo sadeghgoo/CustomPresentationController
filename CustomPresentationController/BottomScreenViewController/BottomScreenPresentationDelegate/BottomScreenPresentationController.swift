@@ -25,7 +25,8 @@ class BottomScreenPresentationController: UIPresentationController {
 	
 	override func presentationTransitionWillBegin() {
 		let presentedViewController = self.presentedViewController
-		
+        isActionOpened = false
+
 		if presentedViewController.transitionCoordinator != nil {
 			presentedViewController.transitionCoordinator?.animate(alongsideTransition: { (context) in
 			}, completion: nil)
