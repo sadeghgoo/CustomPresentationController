@@ -20,13 +20,20 @@ class BottomScreenViewController: UIViewController {
 
     var originY = CGFloat()
 
-    init() {
-       // self.viewMainLabel.text = "06"
+    init(viewTitle:String,viewStatusLabel:String,viewMainLabel:String) {
+        
         super.init(nibName: "BottomScreenViewController", bundle: nil)
-               
         self.initialConfig()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) {
+            self.viewMainLabel.text = viewMainLabel
+            self.viewStatusLabel.text = viewStatusLabel
+            self.viewTitle.text = viewTitle
+        }
+      
+        
     }
     func initialConfig(){
+        
         let transitionDelegate = BottomScreenTransitioningDelegate()
         self.transitionDelegate = transitionDelegate
         self.modalPresentationStyle = .custom

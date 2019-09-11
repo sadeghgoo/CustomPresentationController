@@ -43,7 +43,7 @@ class ContentTablview: UITableViewController {
         if !isActionOpened {
             isActionOpened = true
             self.isViewUp = true
-            let viewController = BottomScreenViewController()
+            let viewController = BottomScreenViewController(viewTitle: "Unit Sadegh", viewStatusLabel: "Compeleted", viewMainLabel: "\(indexPath.row)")
             self.presentedVc = viewController
             self.present(viewController, animated: true, completion: nil)
            
@@ -53,9 +53,7 @@ class ContentTablview: UITableViewController {
     
     func viewStatus(scrollView:UIScrollView) {
         
-        
-        print(isActionOpened)
-        
+
         let offsetSubtraction = abs(self.lastOffset - self.currentOffset)
         
         let isScrollUp = scrollView.contentOffset.y > self.lastOffset

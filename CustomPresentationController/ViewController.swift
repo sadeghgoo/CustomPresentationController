@@ -23,9 +23,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func presentAction(_ sender: UIButton) {
-        let viewController = BottomScreenViewController()
-        self.presentedVc = viewController
-        self.present(viewController, animated: true, completion: nil)
+        //let viewController = BottomScreenViewController()
+       //
     }
 
     @IBAction func dismissAction(_ sender: UIButton) {
