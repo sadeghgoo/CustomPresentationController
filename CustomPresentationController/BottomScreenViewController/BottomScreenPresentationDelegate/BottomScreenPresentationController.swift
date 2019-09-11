@@ -19,13 +19,11 @@ class BottomScreenPresentationController: UIPresentationController {
 
 	override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
 		super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
-		if let vc = presentedViewController as? PresentedVC {
-		}
+		
 	}
 	
 	override func presentationTransitionWillBegin() {
 		let presentedViewController = self.presentedViewController
-        isActionOpened = false
 
 		if presentedViewController.transitionCoordinator != nil {
 			presentedViewController.transitionCoordinator?.animate(alongsideTransition: { (context) in
@@ -37,6 +35,8 @@ class BottomScreenPresentationController: UIPresentationController {
 	
 	override func dismissalTransitionWillBegin() {
 		let presentedViewController = self.presentedViewController
+
+        isActionOpened = false
 
 		if presentedViewController.transitionCoordinator != nil {
 			presentedViewController.transitionCoordinator?.animate(alongsideTransition: { (context) in

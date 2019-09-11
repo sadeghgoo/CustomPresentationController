@@ -14,7 +14,6 @@ class ContentTablview: UITableViewController {
     
     var presentedVc: BottomScreenViewController?
     
-    
     var lastOffset = CGFloat()
     var currentOffset = CGFloat()
     var isViewUp:Bool = false
@@ -24,9 +23,7 @@ class ContentTablview: UITableViewController {
         
         
     }
-    
-    // MARK: - Table view data source
-    
+        
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 400
@@ -43,17 +40,21 @@ class ContentTablview: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let viewController = BottomScreenViewController()
-        
-        if !isActionOpened{
-            self.presentedVc = viewController
-            self.present(viewController, animated: true, completion: nil)
+        if !isActionOpened {
             isActionOpened = true
             self.isViewUp = true
+            let viewController = BottomScreenViewController()
+            self.presentedVc = viewController
+            self.present(viewController, animated: true, completion: nil)
+           
         }
+        
     }
     
-    func viewStatus(scrollView:UIScrollView){
+    func viewStatus(scrollView:UIScrollView) {
+        
+        
+        print(isActionOpened)
         
         let offsetSubtraction = abs(self.lastOffset - self.currentOffset)
         
@@ -63,14 +64,18 @@ class ContentTablview: UITableViewController {
         
         if offsetSubtraction >= UIScreen.main.bounds.height / 6  {
             
-            if isViewUp && isScrollUp{
+            if isViewUp && isScrollUp {
+                
                 self.presentedVc?.moveDown()
                 self.isViewUp = false
                 print("move down was called")
-            }else if !isViewUp && isScrollDown{
+                
+            }else if !isViewUp && isScrollDown {
+                
                 self.presentedVc?.moveUp()
                 self.isViewUp = true
                 print("move up was called")
+                
             }
         }
     }
