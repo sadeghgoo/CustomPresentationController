@@ -25,6 +25,9 @@
 		AACB511B23227B5500369896 /* BottomScreenTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB511923227B5500369896 /* BottomScreenTransitioner.swift */; };
 		AACB511C23227B5500369896 /* BottomScreenPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB511A23227B5500369896 /* BottomScreenPresentationController.swift */; };
 		AACB511F2323866100369896 /* ContentTablview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB511E2323866100369896 /* ContentTablview.swift */; };
+		AACB768B232A6E8400A29EB0 /* BottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AACB768A232A6E8400A29EB0 /* BottomView.xib */; };
+		AACB768D232A834B00A29EB0 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB768C232A834B00A29EB0 /* HexColor.swift */; };
+		AAFD2A9B232A1C41000C06F7 /* UIView + Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFD2A9A232A1C41000C06F7 /* UIView + Extension .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		AACB511923227B5500369896 /* BottomScreenTransitioner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomScreenTransitioner.swift; sourceTree = "<group>"; };
 		AACB511A23227B5500369896 /* BottomScreenPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomScreenPresentationController.swift; sourceTree = "<group>"; };
 		AACB511E2323866100369896 /* ContentTablview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTablview.swift; sourceTree = "<group>"; };
+		AACB768A232A6E8400A29EB0 /* BottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomView.xib; sourceTree = "<group>"; };
+		AACB768C232A834B00A29EB0 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
+		AAFD2A9A232A1C41000C06F7 /* UIView + Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +88,9 @@
 			children = (
 				AA1229C0232235DF00A19D1B /* AppDelegate.swift */,
 				AA1229C2232235DF00A19D1B /* SceneDelegate.swift */,
+				AAFD2A9A232A1C41000C06F7 /* UIView + Extension .swift */,
 				AA1229C4232235DF00A19D1B /* ViewController.swift */,
+				AACB768C232A834B00A29EB0 /* HexColor.swift */,
 				AACB511E2323866100369896 /* ContentTablview.swift */,
 				AA1229FF2322387700A19D1B /* CustomOverlayAlert */,
 				AA1229DB2322374000A19D1B /* BottomScreenViewController */,
@@ -101,6 +109,7 @@
 				AA1229D72322360700A19D1B /* BottomScreenViewController.swift */,
 				AACB511D23227B7B00369896 /* BottomScreenPresentationDelegate */,
 				AA1229D92322361100A19D1B /* BottomScreenViewController.xib */,
+				AACB768A232A6E8400A29EB0 /* BottomView.xib */,
 			);
 			path = BottomScreenViewController;
 			sourceTree = "<group>";
@@ -198,6 +207,7 @@
 				AA1229D0232235E000A19D1B /* LaunchScreen.storyboard in Resources */,
 				AA1229CD232235E000A19D1B /* Assets.xcassets in Resources */,
 				AA1229C8232235DF00A19D1B /* Main.storyboard in Resources */,
+				AACB768B232A6E8400A29EB0 /* BottomView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,12 +225,14 @@
 				AA122A092322387700A19D1B /* AAPLOverlayTransitioner.swift in Sources */,
 				AA122A072322387700A19D1B /* CustomOverlayAlertAction.swift in Sources */,
 				AA122A082322387700A19D1B /* PresentedVC.swift in Sources */,
+				AACB768D232A834B00A29EB0 /* HexColor.swift in Sources */,
 				AA122A0A2322387700A19D1B /* AAPLOverlayPresentationController.swift in Sources */,
 				AA122A0B2322387700A19D1B /* CustomOverlayAlertController.swift in Sources */,
 				AA1229C1232235DF00A19D1B /* AppDelegate.swift in Sources */,
 				AACB511B23227B5500369896 /* BottomScreenTransitioner.swift in Sources */,
 				AA1229D82322360700A19D1B /* BottomScreenViewController.swift in Sources */,
 				AA1229C3232235DF00A19D1B /* SceneDelegate.swift in Sources */,
+				AAFD2A9B232A1C41000C06F7 /* UIView + Extension .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

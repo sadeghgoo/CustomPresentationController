@@ -21,12 +21,11 @@ class ContentTablview: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
         
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 400
+        return 100
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,10 +44,10 @@ class ContentTablview: UITableViewController {
             self.isViewUp = true
             let viewController = BottomScreenViewController(viewTitle: "Unit Sadegh", viewStatusLabel: "Compeleted", viewMainLabel: "\(indexPath.row)")
             self.presentedVc = viewController
+            
             self.present(viewController, animated: true, completion: nil)
            
         }
-        
     }
     
     func viewStatus(scrollView:UIScrollView) {
@@ -59,8 +58,15 @@ class ContentTablview: UITableViewController {
         let isScrollUp = scrollView.contentOffset.y > self.lastOffset
         
         let isScrollDown  = scrollView.contentOffset.y < self.lastOffset
+                
+        if !isViewUp && isScrollDown {
+            
+            self.presentedVc?.moveUp()
+            self.isViewUp = true
+            print("move up was called")
+        }
         
-        if offsetSubtraction >= UIScreen.main.bounds.height / 6  {
+        if offsetSubtraction >= UIScreen.main.bounds.height / 9  {
             
             if isViewUp && isScrollUp {
                 
@@ -68,13 +74,12 @@ class ContentTablview: UITableViewController {
                 self.isViewUp = false
                 print("move down was called")
                 
-            }else if !isViewUp && isScrollDown {
+            }//else if !isViewUp && isScrollDown {
                 
-                self.presentedVc?.moveUp()
-                self.isViewUp = true
-                print("move up was called")
-                
-            }
+               // self.presentedVc?.moveUp()
+                //self.isViewUp = true
+                //print("move up was called")
+            //}
         }
     }
     
@@ -86,7 +91,7 @@ class ContentTablview: UITableViewController {
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.currentOffset = scrollView.contentOffset.y
         viewStatus(scrollView: scrollView)
-        
+       
     }
     
 }

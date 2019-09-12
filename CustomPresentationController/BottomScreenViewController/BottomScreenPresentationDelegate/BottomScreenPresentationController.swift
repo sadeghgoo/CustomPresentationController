@@ -48,10 +48,20 @@ class BottomScreenPresentationController: UIPresentationController {
 	override var adaptivePresentationStyle: UIModalPresentationStyle {
 		return .overFullScreen
 	}
+    
+    override func presentationTransitionDidEnd(_ completed: Bool) {
+        
+        //TODO : set alpha of shadow Visible with animate !
+        UIView.animate(withDuration: 0.3) {
+            self.presentedView?.alpha  = 1
+
+        }
+   
+    }
 	
 	override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
-		let width = floor(parentSize.width * 0.9)
-        let height = CGFloat(84)
+        let width = floor(parentSize.width )
+        let height = CGFloat(300)
 
 		return self.size ?? CGSize(width: width, height: height)
 	}
@@ -65,15 +75,18 @@ class BottomScreenPresentationController: UIPresentationController {
 	}
 	
 	override var frameOfPresentedViewInContainerView: CGRect {
+        
 		var presentedViewFrame = CGRect.zero
 		let containerBounds = self.containerView!.bounds
 		presentedViewFrame.size = self.size(forChildContentContainer: self.presentedViewController, withParentContainerSize: containerBounds.size)
 		presentedViewFrame.origin.x = (containerBounds.size.width - presentedViewFrame.size.width)/2
-        presentedViewFrame.origin.y =  (containerBounds.size.height - presentedViewFrame.size.height) - 24 -        (UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0)
+        presentedViewFrame.origin.y =  (containerBounds.size.height - presentedViewFrame.size.height) - 19 //-        (UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0)
+        
 		return presentedViewFrame
 	}
 	
-	@objc func dimmingViewTapped(_ gesture: UIGestureRecognizer) {    
+	@objc func dimmingViewTapped(_ gesture: UIGestureRecognizer) {
+        
 		if gesture.state == .recognized {
 			if self.dismissByTapDimmingView {
 				self.dismissCompletion?()

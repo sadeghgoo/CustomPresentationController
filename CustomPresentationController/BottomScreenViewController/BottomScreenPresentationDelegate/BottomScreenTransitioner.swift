@@ -34,6 +34,7 @@ class BottomScreenTransitioningDelegate: NSObject, UIViewControllerTransitioning
 		animationController.isPresentation = false
 		return animationController
 	}
+
 }
 
 class BottomScreenAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
@@ -41,8 +42,9 @@ class BottomScreenAnimatedTransitioning: NSObject, UIViewControllerAnimatedTrans
 	var isPresentation: Bool!
 
 	func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-		return 0.5
+        return 0.9
 	}
+    
 	
 	func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
 		
@@ -79,10 +81,11 @@ class BottomScreenAnimatedTransitioning: NSObject, UIViewControllerAnimatedTrans
 		}) { (finished) in
 			
 			if !self.isPresentation {
+                //fromView?.layer.backgroundColor = UIColor.red.cgColor
 				fromView?.removeFromSuperview()
                 containerView.superview?.addSubview(toView!)
+                
 			}
-			
 			transitionContext.completeTransition(true)
 		}
 	}
