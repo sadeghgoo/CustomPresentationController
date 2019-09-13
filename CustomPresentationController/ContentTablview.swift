@@ -8,15 +8,10 @@
 
 import UIKit
 
-var isActionOpened:Bool = false
 
 class ContentTablview: UITableViewController {
     
     var presentedVc: BottomScreenViewController?
-    
-    var lastOffset = CGFloat()
-    var currentOffset = CGFloat()
-    var isViewUp:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,59 +34,24 @@ class ContentTablview: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if !isActionOpened {
-            isActionOpened = true
-            self.isViewUp = true
             let viewController = BottomScreenViewController(viewTitle: "Unit Sadegh", viewStatusLabel: "Compeleted", viewMainLabel: "\(indexPath.row)")
+        
             self.presentedVc = viewController
-            
+        
             self.present(viewController, animated: true, completion: nil)
            
-        }
     }
-    
-    func viewStatus(scrollView:UIScrollView) {
-        
 
-        let offsetSubtraction = abs(self.lastOffset - self.currentOffset)
-        
-        let isScrollUp = scrollView.contentOffset.y > self.lastOffset
-        
-        let isScrollDown  = scrollView.contentOffset.y < self.lastOffset
-                
-        if !isViewUp && isScrollDown {
-            
-            self.presentedVc?.moveUp()
-            self.isViewUp = true
-            print("move up was called")
-        }
-        
-        if offsetSubtraction >= UIScreen.main.bounds.height / 9  {
-            
-            if isViewUp && isScrollUp {
-                
-                self.presentedVc?.moveDown()
-                self.isViewUp = false
-                print("move down was called")
-                
-            }//else if !isViewUp && isScrollDown {
-                
-               // self.presentedVc?.moveUp()
-                //self.isViewUp = true
-                //print("move up was called")
-            //}
-        }
-    }
-    
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         
-        self.lastOffset = scrollView.contentOffset.y
+        self.presentedVc?.setLastOffset(last: scrollView.contentOffset.y)
+        
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        self.currentOffset = scrollView.contentOffset.y
-        viewStatus(scrollView: scrollView)
-       
+        
+        self.presentedVc?.viewStatus(in: scrollView)
+
     }
     
 }

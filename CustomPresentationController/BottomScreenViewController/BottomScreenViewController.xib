@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomScreenViewController" customModule="CustomPresentationController" customModuleProvider="target">
             <connections>
+                <outlet property="gradientView" destination="Zau-od-2zF" id="HUY-9y-zrz"/>
                 <outlet property="purpleView" destination="NKO-Rb-Qs8" id="dQ5-cm-wg4"/>
                 <outlet property="view" destination="iN0-l3-epB" id="QwI-O3-j46"/>
                 <outlet property="viewMainLabel" destination="rh6-Aa-Lie" id="fnV-8y-t99"/>
@@ -21,6 +22,9 @@
             <rect key="frame" x="0.0" y="0.0" width="773" height="319"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zau-od-2zF" userLabel="Gradient View">
+                    <rect key="frame" x="0.0" y="0.0" width="773" height="319"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKO-Rb-Qs8">
                     <rect key="frame" x="10" y="189" width="753" height="84"/>
                     <subviews>
@@ -91,8 +95,12 @@
                 </view>
             </subviews>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="Zau-od-2zF" secondAttribute="bottom" id="2PL-bn-QhC"/>
                 <constraint firstItem="NKO-Rb-Qs8" firstAttribute="leading" secondItem="2Dl-vz-jP2" secondAttribute="leading" constant="10" id="9pd-pf-Wju"/>
                 <constraint firstItem="NKO-Rb-Qs8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="189" id="NOI-jR-5GG"/>
+                <constraint firstItem="2Dl-vz-jP2" firstAttribute="trailing" secondItem="Zau-od-2zF" secondAttribute="trailing" id="dpw-1Q-XhI"/>
+                <constraint firstItem="Zau-od-2zF" firstAttribute="leading" secondItem="2Dl-vz-jP2" secondAttribute="leading" id="fgH-Rj-M9Z"/>
+                <constraint firstItem="Zau-od-2zF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qAn-JC-Xtf"/>
                 <constraint firstItem="2Dl-vz-jP2" firstAttribute="trailing" secondItem="NKO-Rb-Qs8" secondAttribute="trailing" constant="10" id="zC8-0N-OOJ"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

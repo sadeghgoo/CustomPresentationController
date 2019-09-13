@@ -16,13 +16,19 @@ class BottomScreenViewController: UIViewController {
     @IBOutlet weak var viewStatusLabel: UILabel!
     @IBOutlet weak var viewMainLabel: UILabel!
     
+    @IBOutlet weak var gradientView: UIView!
+    
     private var viewMainlabelText:String!
     private var viewStatusLabeltext:String!
     private var viewTitleText:String!
 
 
+    private var lastOffset:CGFloat!
+    private var currentOffset:CGFloat!
+    
+    var isViewUp:Bool = true
+    
     var transitionDelegate: UIViewControllerTransitioningDelegate!
-
 
     var originY = CGFloat()
 
@@ -73,22 +79,61 @@ class BottomScreenViewController: UIViewController {
   
     func makeShadowView(){
      
-        
-        self.view.setGradientBackground(colorOne: UIColor(white: 1, alpha: 0), colorTwo:UIColor(white: 1, alpha: 0.5), colorThree:UIColor(white: 1, alpha: 1) )
+       self.gradientView.setGradientBackground(colorOne: UIColor(white: 1, alpha: 0), colorTwo:UIColor(white: 1, alpha: 0.5), colorThree:UIColor(white: 1, alpha: 1) )
         
         self.purpleView.layer.shadowColor = UIColor.black.cgColor
         self.purpleView.layer.shadowRadius = 16
         self.purpleView.layer.shadowOffset = CGSize(width: 0, height: 12)
+        
         self.purpleView.layer.shadowOpacity = 0.4
         
     }
     
+    func viewStatus(in scrollView:UIScrollView) {
+
+        self.currentOffset = scrollView.contentOffset.y
+
+        let offsetSubtraction = abs(self.lastOffset - self.currentOffset)
+
+        let isScrollUp = scrollView.contentOffset.y > self.lastOffset
+
+        let isScrollDown  = scrollView.contentOffset.y < self.lastOffset
+
+        if !isViewUp && isScrollDown {
+
+            self.moveUp()
+            isViewUp = true
+            print("move up was called")
+        }
+
+        if offsetSubtraction >= UIScreen.main.bounds.height / 9  {
+
+            if isViewUp && isScrollUp {
+
+                self.moveDown()
+                isViewUp = false
+                print("move down was called")
+
+            }
+        }
+    }
+    
+        
+    func setLastOffset(last Offset:CGFloat){
+        
+        self.lastOffset = Offset
+        
+    }
+    
+    
     @IBAction func dismissAction(_ sender: UIButton) {
+        
         self.dismiss(animated: true, completion: nil)
     }
     
     
     func moveDown() {
+        
         UIView.animate(withDuration: 0.3) {
         
             self.view.frame.origin.y = UIScreen.main.bounds.height + 80
@@ -96,11 +141,11 @@ class BottomScreenViewController: UIViewController {
     }
     
     func moveUp() {
+        
         UIView.animate(withDuration: 0.3) {
            
             self.view.frame.origin.y  = self.originY
-            
-
+        
         }
     }
 }

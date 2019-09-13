@@ -12,7 +12,6 @@ class BottomScreenPresentationController: UIPresentationController {
 	
 	var dismissByTapDimmingView: Bool = true
 	
-//	var dimmingView: UIView!
 	var size: CGSize?
 	
 	var dismissCompletion: (() -> Void)?
@@ -36,7 +35,6 @@ class BottomScreenPresentationController: UIPresentationController {
 	override func dismissalTransitionWillBegin() {
 		let presentedViewController = self.presentedViewController
 
-        isActionOpened = false
 
 		if presentedViewController.transitionCoordinator != nil {
 			presentedViewController.transitionCoordinator?.animate(alongsideTransition: { (context) in
@@ -50,11 +48,9 @@ class BottomScreenPresentationController: UIPresentationController {
 	}
     
     override func presentationTransitionDidEnd(_ completed: Bool) {
-        
         //TODO : set alpha of shadow Visible with animate !
-        UIView.animate(withDuration: 0.3) {
-            self.presentedView?.alpha  = 1
-
+        UIView.animate(withDuration: 0.12) {
+            
         }
    
     }
