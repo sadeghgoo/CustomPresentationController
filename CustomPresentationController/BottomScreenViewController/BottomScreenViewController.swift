@@ -8,8 +8,12 @@
 
 import UIKit
 
-class BottomScreenViewController: UIViewController {
+protocol ButtonActionDelegate:class{
+    
+    func buttonTapped()
+}
 
+class BottomScreenViewController: UIViewController {
 
     @IBOutlet weak var purpleView: UIView!
     @IBOutlet weak var viewTitle: UILabel!
@@ -21,8 +25,9 @@ class BottomScreenViewController: UIViewController {
     private var viewMainlabelText:String!
     private var viewStatusLabeltext:String!
     private var viewTitleText:String!
-
-
+    
+    weak var delegate:ButtonActionDelegate?
+    
     private var lastOffset:CGFloat!
     private var currentOffset:CGFloat!
     
@@ -41,6 +46,8 @@ class BottomScreenViewController: UIViewController {
         self.viewMainlabelText = viewMainLabel
         self.viewTitleText = viewTitle
         self.viewStatusLabeltext = viewStatusLabel
+        
+        
 
     }
     
@@ -68,14 +75,18 @@ class BottomScreenViewController: UIViewController {
        
         self.makeShadowView()
         
-        self.view.isUserInteractionEnabled = false
 
+        if let view = view as? BottomScreenView {
+            view.interactingView = purpleView
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         originY = self.view.frame.origin.y
     
     }
+    
+    
   
     func makeShadowView(){
      
@@ -118,17 +129,15 @@ class BottomScreenViewController: UIViewController {
         }
     }
     
-        
     func setLastOffset(last Offset:CGFloat){
         
         self.lastOffset = Offset
         
     }
-    
-    
+   
     @IBAction func dismissAction(_ sender: UIButton) {
         
-        self.dismiss(animated: true, completion: nil)
+       self.delegate?.buttonTapped()
     }
     
     
@@ -147,5 +156,22 @@ class BottomScreenViewController: UIViewController {
             self.view.frame.origin.y  = self.originY
         
         }
+    }
+}
+
+class BottomScreenView:UIView{
+    weak var interactingView: UIView?
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        
+        guard let interactingView = interactingView else {
+            return super.hitTest(point, with: event)
+        }
+        
+        if interactingView.point(inside: interactingView.convert(point, from: self), with: event) {
+            return super.hitTest(point, with: event)
+        }
+        
+        return nil
     }
 }
